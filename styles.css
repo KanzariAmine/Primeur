@@ -1,0 +1,120 @@
+/******************************* REST CSS values ********************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  background-color: #ffb75e;
+}
+/******************************* Header Style ********************************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+.container_header {
+  margin-bottom: 10px;
+  height: 100px;
+}
+/******************************* Container Header Style ********************************/
+.container_search {
+  height: 100px;
+}
+.form_control {
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  border: 2px solid #a9a9a9;
+}
+/******************************* Container Body Style ********************************/
+#container_body {
+  display: grid;
+  grid-template-rows: repeat(4, 350px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+
+/******************************* Card Style ********************************/
+.card_inner {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card_inner {
+  transform: rotateY(180deg);
+}
+.card_front,
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background: wheat;
+}
+.card_front_img img {
+  width: 100%;
+  height: 180px;
+  border-radius: 5px 5px 0 0;
+}
+.card_front_info {
+  padding: 10px;
+}
+.card_front_info h1 {
+  text-align: center;
+  font-size: 17px;
+  padding-bottom: 10px;
+  color: #a06903;
+}
+.card_front_info ul li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+.card_back {
+  background-color: rgb(109, 107, 107);
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card_back_title {
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.card_back_description p {
+  text-align: justify;
+  font-size: 15px;
+  padding-top: 10px;
+}
+/******************************* Media Style ********************************/
+@media (max-width: 800px) {
+  #container_body {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 350px);
+  }
+}
+@media (max-width: 500px) {
+  #container_body {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(20, 350px);
+  }
+}
